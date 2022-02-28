@@ -1,6 +1,18 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 const CommunicationDetails = () => {
+    const history = useHistory()
+    const HandleNext = () => {
+        history.push({
+            pathname:'/cad'
+        })
+    }
+    const HandlePrevious = () =>{
+        history.push({
+            pathname:'/'
+        })
+    }
     return (
         <div>
             <h1>Communication Details</h1>
@@ -16,8 +28,8 @@ const CommunicationDetails = () => {
                 <input type="text" placeholder="country" required/>
             </label><br></br><br></br>
 
-            <button>Previous</button>
-            <button>Next</button>
+            <button onClick={HandlePrevious}>Previous</button>
+            <button onClick={HandleNext}>Next</button>
         </div>
     )
 }
