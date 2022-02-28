@@ -1,6 +1,13 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 const CardDetails = () => {
+    const history = useHistory()
+    const HandlePrevious = () => {
+        history.push({
+            pathname:'/cd'
+        })
+    }
     return (
         <div>
             <h1>Card Details</h1>
@@ -26,7 +33,7 @@ const CardDetails = () => {
                 <input type="text" placeholder="" required/>
             </label><br></br><br></br>
 
-            <button>Previous</button>
+            <button onClick={HandlePrevious}>Previous</button>
             <button>Next</button>
         </div>
     )
